@@ -20,7 +20,7 @@ sudo bash -c 'echo "StrictHostKeyChecking No" >> /etc/ssh/ssh_config'
 # configuring aws cli on our instance
 sudo su -c "aws configure set aws_access_key_id ${aws_iam_access_key.user-access-key.id}" ec2-user
 sudo su -c "aws configure set aws_secret_access_key ${aws_iam_access_key.user-access-key.secret}" ec2-user
-sudo su -c "aws configure set default.region eu-west-3" ec2-user
+sudo su -c "aws configure set default.region eu-west-1" ec2-user
 sudo su -c "aws configure set default.output text" ec2-user
 
 # setting credentials as environment variable on our instance
@@ -56,7 +56,7 @@ echo "* * * * * ec2-user sh /etc/ansible/stage-bash-script.sh" > /etc/crontab
 echo "* * * * * ec2-user sh /etc/ansible/prod-bash-script.sh" >> /etc/crontab
 
 # adding newrelic agent to ansible server
-echo "license_key: eu01xx20f683825c611d81edb12afbed7d23NRAL" | sudo tee -a /etc/newrelic-infra.yml
+echo "license_key: eu01xx39cb97fdfc64378971c3a3f94eda8bNRAL" | sudo tee -a /etc/newrelic-infra.yml
 sudo curl -o /etc/yum.repos.d/newrelic-infra.repo https://download.newrelic.com/infrastructure_agent/linux/yum/el/7/x86_64/newrelic-infra.repo
 sudo yum -q makecache -y --disablerepo='*' --enablerepo='newrelic-infra'
 sudo yum install newrelic-infra -y --nobest
