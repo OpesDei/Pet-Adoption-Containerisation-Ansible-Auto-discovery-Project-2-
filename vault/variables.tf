@@ -1,0 +1,13 @@
+variable "region" {default = "eu-west-1"}
+variable "profile" {default = "default"}
+variable "public-key" {default = "~/Keypairs/pacpujpeu2.pub"}
+variable "all_cidr" {default = "0.0.0.0/0"}
+variable "port_ssh" {default = 22}
+variable "port_vault" {default = 8200} # proxy port for Jenkins and Docker
+variable "port_http" {default = 80}
+variable "port_https" {default = 443}
+variable "sg-protocol" {default = "tcp"}
+variable "vault-ami" {default = "ami-00b1c9efd33fda707"}
+variable "instance_type" {default = "t2.medium"}
+variable "aws_region" {default = "eu-west-1"}
+# variable "domain_name" {default = "thinkeod.com"}
