@@ -1,10 +1,12 @@
 locals {
   name = "aad-eu2"
 }
-provider "vault" {
-  token   = "s.KGqGspjsv4lE4M4YTTVc2KXj"
-  address = "https://thinkeod.com"
-}
+
+# provider "vault" {
+#   token   = "s.KGqGspjsv4lE4M4YTTVc2KXj"
+#   address = "https://thinkeod.com"
+# }
+
 module "vpc" {
   source                 = "./module/vpc"
   vpc_cidr               = "10.0.0.0/16"
